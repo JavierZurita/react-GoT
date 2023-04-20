@@ -1,6 +1,6 @@
 export default function HouseDetailPage(){
 
     return(
-        <div>HOUSE PAGE</div>
+        <div>HOUSE DETAIL PAGE</div>
     )
 }

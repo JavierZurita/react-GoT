@@ -1,12 +1,13 @@
 import Card from "../Card/Card";
 
-export default function Gallery({data}){
+export default function Gallery({data, type}){
 
+    // console.log(data);
     return(
         <div>
-            {data && data.map((char, index) => 
+            {data && data.map((item, index) => 
                 <div key={index}>
-                    <Card data={char}></Card>
+                    <Card type={type} data={item}></Card>
                 </div>
             )}
         </div>

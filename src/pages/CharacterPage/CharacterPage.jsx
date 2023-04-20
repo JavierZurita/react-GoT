@@ -14,8 +14,7 @@ export default function CharacterPage(){
 
     return(
         <div>
-            <h2>PERSONAJES</h2>
-            <Gallery data={characters}></Gallery>
+            <Gallery type="character" data={characters}></Gallery>
         </div>
     )
 }
