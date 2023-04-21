@@ -2,6 +2,8 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import Gallery from "../../components/Gallery/Gallery";
 import "./CharacterPage.scss"
+import Footer from "../../components/Footer/Footer";
+import Header from "../../components/Header/Header";
 export default function CharacterPage(){
 
     const [characters, setCharacters] = useState();
@@ -30,8 +32,10 @@ export default function CharacterPage(){
 
     return(
         <div className="charpage">
+            <Header />
             <input type="text" onChange={(e) => handleChange(e)}/>
             <Gallery type="character" data={characters}></Gallery>
+            <Footer />
         </div>
     )
 }

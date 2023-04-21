@@ -1,6 +1,12 @@
+import Footer from "../../components/Footer/Footer";
+
 export default function HomePage(){
 
     return(
-        <div>FEO</div>
+        <div>FEO
+            <Footer>
+                
+            </Footer>
+        </div>
     )
 }

@@ -12,14 +12,14 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Router>
-          <header>
+          {/* <header>
             <nav>
               <Link to="/">Home</Link>
               <Link to="/character">Character</Link>
               <Link to="/house">House</Link>
               <Link to="/chronology">Chronology</Link>
             </nav>
-          </header>
+          </header> */}
           <Routes>
             <Route path="/" element={<HomePage />}></Route>
             <Route path="/character" element={<CharacterPage />}></Route>
