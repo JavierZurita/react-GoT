@@ -7,13 +7,15 @@ export default function ChronologyPage(){
    
     const [characters, setCharacters] = useState();
     let [sortMinToMax, setSortMinToMax] = useState(true);
+    let [isRotated, setIsRotated] = useState(true);
     useEffect(()=>{
         axios.get("http://localhost:3000/characters").then(res => {
             const sortedCharacters = sortByNumber(res.data);
             setCharacters(sortedCharacters);
         })
+       
     },[])
-    
+
     const sortByNumber = (array) => {
         if(sortMinToMax){
             array.sort((a, b) => a.age - b.age);
@@ -22,16 +24,19 @@ export default function ChronologyPage(){
             array.sort((a, b) => b.age - a.age);
             setSortMinToMax(true);
         }
-        console.log(array);
+        setIsRotated(!isRotated);
         return array;
     }
-
+    
     return(
-        <div>
+        <div className="chronology">
             <Header />
-           {characters && <div className="sort" onClick={() => {sortByNumber(characters)}}>{characters[0].age}</div>}
+           {characters && <div onClick={() => {sortByNumber(characters)}} className="sort">{characters[0].age}</div>}
+            <div className="barra" />
+            <img  className={isRotated ? "arrow rotated" : "arrow"} src="/flecha.png" alt="flecha"/>
             {characters && characters.map((char,index) => 
-                <div key={index}>
+                <div className={index%2 === 0 ? "chronology__item--left" : "chronology__item--right"} key={index}>
+                    
                     <p>{char.name}</p>
                     <p>{char.age}</p>
                     <img src={"http://localhost:3000/"+char.image} alt={char.name} />
