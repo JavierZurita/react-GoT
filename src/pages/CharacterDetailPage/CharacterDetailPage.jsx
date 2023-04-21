@@ -34,26 +34,17 @@ export default function CharacterDetailPage(){
             
             {char && (
                 <div className="gallery--items">
-                {char.titles && char.titles.map((title, index) =>
-                  <div className="char--info" key={title}>
-                    <h3>House</h3>
-                    {house && <img src={"http://localhost:3000/"+house} alt="house"></img>}
-                  </div>)}
+                    <div className="char--info">
+                        <h3>House</h3>
+                        {house && <img src={"http://localhost:3000/"+house} alt="house"></img>}
+                    </div>
                 {Object.entries(char).map(([key, value]) => {
                     if (key !== "id"&& key !== "name" && key !== "age" && key !== "image" && key !=="house") {
                         return (
                         <div className="char--info" key={key}>
                             <h3 className="title">{key.charAt(0).toUpperCase() + key.slice(1)}</h3>
                             <ul>
-                                {Array.isArray(value) ? (
-                                    <>
-                                    {value.map((item, index) => (
-                                        <li key={item}>{item}</li>
-                                    ))}
-                                    </>
-                                ) : (
-                                <li> {value} </li>
-                                )}
+                            {value.map((item, index) => ( <li key={item}>{item}</li> ))}
                             </ul>
                         </div>
                         );

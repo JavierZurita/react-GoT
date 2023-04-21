@@ -12,8 +12,25 @@ export default function CharacterPage(){
         })
     },[])
 
+    const handleChange = (e) => {
+        const charCopy = [];
+        let info = [];
+        axios.get("http://localhost:3000/characters").then(res => {
+            info = res.data;
+            for (const char of info) {
+                if(char.name.toLowerCase().includes(e.target.value.toLowerCase())){
+                    charCopy.push(char);
+                }
+            }
+            setCharacters(charCopy);
+        })
+        console.log(e.target.value);
+        console.log(characters);
+    }
+
     return(
         <div className="charpage">
+            <input type="text" onChange={(e) => handleChange(e)}/>
             <Gallery type="character" data={characters}></Gallery>
         </div>
     )
