@@ -6,5 +6,5 @@ export const es = {
     home: "Inicio",
     characters: "Personajes",
     houses: "Casas",
-    chronology: "Cronología"
+    chronology: "Cronologia"
 }
