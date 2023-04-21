@@ -1,23 +1,72 @@
-.page{
-    width: 80%;
+.main{
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-   .gallery--items{
-    display: flex;
-    gap: 30px;
-    .char--info{
-        font-size: 24px;
+    .divPadre{
         display: flex;
-        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        ul{
-            padding: 0;
+        flex-direction: column;
+        &__personaje{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            &--img{
+                width: 248px;
+            }
+            &--name{
+                font-size: 32px;
+                margin: 30px;
+            }
         }
-        li{
-        list-style: none;
+        &__contenedores{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 100px;
+            width: 248px;
+            height: 300px;
+            margin-top: 10px;
+            &--ind{
+                height: 100%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                flex-direction: column;
+                &--house{
+                    font-size: 24px;
+                    font-weight: 100;
+                    margin-bottom: 50px;
+                }
+                &--img{
+                    width: 160px;
+                }
+                &--key{
+                    font-size: 24px;
+                    margin-bottom: 50px;
+                    font-weight: 100;
+                }
+                &--list{
+                    height: 100%;
+                    padding: 0px;
+                    margin: 0px;
+                    list-style: none;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    flex-direction: column;
+                    &--value{
+                        text-align: center;
+                        font-size: 16px;
+                        font-weight: 300;
+                        font-family: 'Roboto', sans-serif;
+                        margin: 10px 0px;
+                    }
+                }
+            }
         }
     }
-    
-} 
 }

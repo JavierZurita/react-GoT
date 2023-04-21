@@ -19,23 +19,23 @@ export default function HouseDetailPage(){
     }, [])
 
     return(
-        <div>
+        <div className="main">
             <Header></Header>
-            <div className="page">
+            <div className="divPadre">
             {house && (
-                <div>
-                    <img src={"http://localhost:3000/" + house.image}></img>
-                    <h2>{house.name}</h2>
+                <div className="divPadre__personaje">
+                    <img className="divPadre__personaje--img" src={"http://localhost:3000/" + house.image}></img>
+                    <h2 className="divPadre__personaje--name">{house.name}</h2>
                 </div>
             )}
-            <div className="gallery--items">
+            <div className="divPadre__contenedores">
                 {house && Object.entries(house).map(([key, value]) => {
                     if (key !== "id" && key !== "name" && key !== "image") {
                         return (
-                            <div className="char--info" key={key}>
-                                <h3 className="title">{key.charAt(0).toUpperCase() + key.slice(1)}</h3>
-                                <ul>
-                                    {Array.isArray(value) ? value.map((item, index) => ( <li key={item}>{item}</li> )) : <li>{value}</li>}
+                            <div className="divPadre__contenedores--ind" key={key}>
+                                <h3 className="divPadre__contenedores--ind--key">{key.charAt(0).toUpperCase() + key.slice(1)}</h3>
+                                <ul className="divPadre__contenedores--ind--list"> 
+                                    {Array.isArray(value) ? value.map((item, index) => ( <li className="divPadre__contenedores--ind--list--value" key={item}>{item}</li> )) : <li className="divPadre__contenedores--ind--list--value">{value}</li>}
                                 </ul>
                             </div>
                         );
