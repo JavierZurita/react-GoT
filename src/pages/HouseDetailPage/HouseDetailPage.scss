@@ -1,0 +1,23 @@
+.page{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   .gallery--items{
+    display: flex;
+    gap: 30px;
+    .char--info{
+        font-size: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        ul{
+            padding: 0;
+        }
+        li{
+        list-style: none;
+        }
+    }
+    
+} 
+}
