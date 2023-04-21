@@ -29,31 +29,32 @@ export default function CharacterDetailPage(){
          },[])
 
     return(
-        <div>
+        <div className="main">
             <Header></Header>
-            <div className="page">
-            {char.image && <img src={"http://localhost:3000/"+char.image} alt={char.name}></img>}
-            <h2>{char.name}</h2>
-            
-            {char && (
-                <div className="gallery--items">
-                    <div className="char--info">
-                        <h3>House</h3>
-                        {house && <img src={"http://localhost:3000/"+house} alt="house"></img>}
-                    </div>
-                {Object.entries(char).map(([key, value]) => {
-                    if (key !== "id"&& key !== "name" && key !== "age" && key !== "image" && key !=="house") {
-                        return (
-                        <div className="char--info" key={key}>
-                            <h3 className="title">{key.charAt(0).toUpperCase() + key.slice(1)}</h3>
-                            <ul>
-                            {value.map((item, index) => ( <li key={item}>{item}</li> ))}
-                            </ul>
+            <div className="divPadre">
+                <div className="divPadre__personaje">
+                    {char.image && <img className="divPadre__personaje--img" src={"http://localhost:3000/"+char.image} alt={char.name}></img>}
+                    <h2 className="divPadre__personaje--name">{char.name}</h2>
+                </div>
+                {char && (
+                    <div className="divPadre__contenedores">
+                        <div className="divPadre__contenedores--ind">
+                            <h3 className="divPadre__contenedores--ind--house">House</h3>
+                            {house && <img className="divPadre__contenedores--ind--img" src={"http://localhost:3000/"+house} alt="house"></img>}
                         </div>
-                        );
-                    }
-                    return null;
-                    })}
+                    {Object.entries(char).map(([key, value]) => {
+                        if (key !== "id"&& key !== "name" && key !== "age" && key !== "image" && key !=="house") {
+                            return (
+                            <div className="divPadre__contenedores--ind" key={key}>
+                                <h3 className="divPadre__contenedores--ind--key">{key.charAt(0).toUpperCase() + key.slice(1)}</h3>
+                                <ul className="divPadre__contenedores--ind--list">
+                                {value.map((item, index) => ( <li className="divPadre__contenedores--ind--list--value" key={item}>{item}</li> ))}
+                                </ul>
+                            </div>
+                            );
+                        }
+                        return null;
+                        })}
                 </div>
             )}
         </div>
