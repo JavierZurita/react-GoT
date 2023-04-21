@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import "./CharacterDetailPage.scss"
+import Header from "../../components/Header/Header";
 
 export default function CharacterDetailPage(){
     const {id} = useParams();
@@ -28,7 +29,9 @@ export default function CharacterDetailPage(){
          },[])
 
     return(
-        <div className="page">
+        <div>
+            <Header></Header>
+            <div className="page">
             {char.image && <img src={"http://localhost:3000/"+char.image} alt={char.name}></img>}
             <h2>{char.name}</h2>
             
@@ -54,5 +57,7 @@ export default function CharacterDetailPage(){
                 </div>
             )}
         </div>
+        </div>
+        
     )
 }
