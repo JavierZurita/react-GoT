@@ -1,5 +1,5 @@
 import { Link, Route, Routes, BrowserRouter as Router } from 'react-router-dom';
-import './App.css';
+import './App.scss';
 import HomePage from './pages/HomePage/HomePage';
 import HousePage from './pages/HousePage/HousePage';
 import CharacterPage from './pages/CharacterPage/CharacterPage';
@@ -17,8 +17,7 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <main className="main">
         <LanguageContext.Provider value={{t, changeLanguaje}}>
           <Router>
             <Routes>
@@ -31,8 +30,7 @@ function App() {
             </Routes>
           </Router>
         </LanguageContext.Provider>
-      </header>
-    </div>
+    </main>
   );
 }
 

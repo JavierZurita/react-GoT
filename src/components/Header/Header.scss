@@ -1,0 +1,23 @@
+.header{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__divVacio{
+
+    }
+    &__language{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 20px;
+        margin-right: 156px;
+        &--img{
+            width: 64px;
+            height: 50px;
+        }
+    }
+}

@@ -1,3 +1,4 @@
+import './Footer.scss'
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
@@ -7,12 +8,9 @@ export default function Footer(){
 
     return (
         <footer className="footer">
-            <nav>
-                {/* <Link to="/">Home</Link> */}
-                <Link to="/character">{t('characters')}</Link>
-                <Link to="/house">{t('houses')}</Link>
-                <Link to="/chronology">{t('chronology')}</Link>
-            </nav>
+            <Link className="footer__link" to="/character">{t('characters')}</Link>
+            <Link className="footer__link" to="/house">{t('houses')}</Link>
+            <Link className="footer__link" to="/chronology">{t('chronology')}</Link>
         </footer>
     )
 }
