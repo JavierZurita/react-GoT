@@ -1,7 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import Gallery from "../../components/Gallery/Gallery";
-
+import "./CharacterPage.scss"
 export default function CharacterPage(){
 
     const [characters, setCharacters] = useState();
@@ -13,7 +13,7 @@ export default function CharacterPage(){
     },[])
 
     return(
-        <div>
+        <div className="charpage">
             <Gallery type="character" data={characters}></Gallery>
         </div>
     )
