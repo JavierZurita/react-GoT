@@ -1,11 +1,14 @@
 import './HouseDetailPage.scss'
 import axios from "axios";
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { useParams } from "react-router-dom/dist";
+import Header from '../../components/Header/Header';
 
 export default function HouseDetailPage(){
     const {id} = useParams();
     const [house, setHouse] = useState([]);
+
+    
 
     
     useEffect(() => {
@@ -16,7 +19,9 @@ export default function HouseDetailPage(){
     }, [])
 
     return(
-        <div className="page">
+        <div>
+            <Header></Header>
+            <div className="page">
             {house && (
                 <div>
                     <img src={"http://localhost:3000/" + house.image}></img>
@@ -38,5 +43,7 @@ export default function HouseDetailPage(){
                 })}
             </div>
         </div>
+        </div>
+        
     )
 }

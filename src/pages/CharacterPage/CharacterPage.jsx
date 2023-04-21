@@ -1,11 +1,13 @@
 import axios from "axios"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import Gallery from "../../components/Gallery/Gallery";
 import "./CharacterPage.scss"
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
+import { LanguageContext } from "../../shared/context/Language.context";
 export default function CharacterPage(){
 
+    const {t} = useContext(LanguageContext)
     const [characters, setCharacters] = useState();
     
     useEffect(()=>{
