@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-
+import "./ChronologyPage.scss"
+import Footer from "../../components/Footer/Footer";
+import Header from "../../components/Header/Header";
 export default function ChronologyPage(){
    
     const [characters, setCharacters] = useState();
@@ -26,6 +28,7 @@ export default function ChronologyPage(){
 
     return(
         <div>
+            <Header />
            {characters && <div className="sort" onClick={() => {sortByNumber(characters)}}>{characters[0].age}</div>}
             {characters && characters.map((char,index) => 
                 <div key={index}>
@@ -34,6 +37,7 @@ export default function ChronologyPage(){
                     <img src={"http://localhost:3000/"+char.image} alt={char.name} />
                 </div>
             )}
+            <Footer />
         </div>
     )
 }
