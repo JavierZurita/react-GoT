@@ -5,6 +5,7 @@ import HousePage from './pages/HousePage/HousePage';
 import CharacterPage from './pages/CharacterPage/CharacterPage';
 import CharacterDetailPage from './pages/CharacterDetailPage/CharacterDetailPage';
 import HouseDetailPage from './pages/HouseDetailPage/HouseDetailPage';
+import ChronologyPage from './pages/CronologyPage/ChronologyPage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
               <Link to="/">Home</Link>
               <Link to="/character">Character</Link>
               <Link to="/house">House</Link>
+              <Link to="/chronology">Chronology</Link>
             </nav>
           </header>
           <Routes>
@@ -24,6 +26,7 @@ function App() {
             <Route path="/character/:id" element={<CharacterDetailPage />}></Route>
             <Route path="/house" element={<HousePage />}></Route>
             <Route path="/house/:id" element={<HouseDetailPage />}></Route>
+            <Route path="/chronology" element={<ChronologyPage />}></Route>
           </Routes>
         </Router>
       </header>

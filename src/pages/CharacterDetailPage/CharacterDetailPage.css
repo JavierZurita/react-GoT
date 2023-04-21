@@ -1,0 +1,22 @@
+.page {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page .gallery--items {
+  display: flex;
+  gap: 30px;
+}
+.page .gallery--items .char--info {
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page .gallery--items .char--info ul {
+  padding: 0;
+}
+.page .gallery--items .char--info li {
+  list-style: none;
+}/*# sourceMappingURL=CharacterDetailPage.css.map */
