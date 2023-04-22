@@ -7,24 +7,27 @@ import Header from "../../components/Header/Header";
 export default function HousePage(){
 
     const [houses, setHouses] = useState("");
-    const [filteredHouses, setFilteredHouses] = useState("");
+    const [searchValue, setSearchValue] = useState("");
 
     useEffect(() => {
+        const filteredHouses = [];
+        let houseCopy = [];
         axios.get("http://localhost:3000/houses").then(res => {
+            houseCopy = res.data;
             setHouses(res.data);
-            setFilteredHouses(res.data);
+            for( const house of houseCopy){
+                if(house.name.toLowerCase().includes(searchValue.toLowerCase())){
+                    filteredHouses.push(house);
+                }
+            }
+            setHouses(filteredHouses)
         })
-    },[])
+    },[searchValue])
 
-    const handleSearchInputChange = (event) => {
-        const searchString = event.target.value.toLowerCase();
-        const filtered = houses.filter((house) => house.name.toLowerCase().includes(searchString)); 
-        console.log(filtered);
-    };
     return(
         <div>
-            <Header onSearch={handleSearchInputChange}/>
-            <Gallery type="house" data={filteredHouses}></Gallery>
+            <Header data={{searchValue,setSearchValue}}/>
+            <Gallery type="house" data={houses}></Gallery>
             <Footer />
         </div>
     )

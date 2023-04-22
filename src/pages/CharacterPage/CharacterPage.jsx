@@ -9,33 +9,39 @@ export default function CharacterPage(){
 
     const {t} = useContext(LanguageContext)
     const [characters, setCharacters] = useState();
+    const [searchValue, setSearchValue] = useState("");
     
     useEffect(()=>{
-        axios.get("http://localhost:3000/characters").then(res => {
-            setCharacters(res.data);
-        })
-    },[])
-
-    const handleChange = (e) => {
         const charCopy = [];
         let info = [];
         axios.get("http://localhost:3000/characters").then(res => {
             info = res.data;
             for (const char of info) {
-                if(char.name.toLowerCase().includes(e.target.value.toLowerCase())){
+                if(char.name.toLowerCase().includes(searchValue.toLowerCase())){
                     charCopy.push(char);
                 }
             }
             setCharacters(charCopy);
         })
-        console.log(e.target.value);
-        console.log(characters);
-    }
+    },[searchValue])
+
+    // const handleChange = (e) => {
+    //     const charCopy = [];
+    //     let info = [];
+    //     axios.get("http://localhost:3000/characters").then(res => {
+    //         info = res.data;
+    //         for (const char of info) {
+    //             if(char.name.toLowerCase().includes(searchValue.toLowerCase())){
+    //                 charCopy.push(char);
+    //             }
+    //         }
+    //         setCharacters(charCopy);
+    //     })
+    // }
 
     return(
         <div className="charpage">
-            <Header />
-            <input type="text" onChange={(e) => handleChange(e)}/>
+            <Header data={{searchValue,setSearchValue}}/>
             <Gallery type="character" data={characters}></Gallery>
             <Footer />
         </div>
