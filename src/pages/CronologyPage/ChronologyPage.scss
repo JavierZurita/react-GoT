@@ -4,52 +4,74 @@
     align-items: center;
     padding: 0;
     margin: 0;
-    .barra {
-        position: absolute;
-        top: 105px;
-        height: -webkit-fill-available;
-        border: 3px solid white;
-    }
-    .arrow{
-        width: 60px;
-        z-index: 1;
-    }
-    .rotated{
-        rotate: 180deg;
-    }
-    .sort{ 
+    &__main{
+        position: relative;
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: center;
-        border: 5px solid white;
-        border-radius: 50px;
-        width: 60px;
-        height: 60px;
-        margin-bottom: 30px;
-        cursor: pointer;
-    }
-    &__item{
-        &--left{
-            border-top: 5px solid white;
-            margin-right: 300px;
-            width: 300px;
-            img{
-                height: 120px;
-                width: 120px;
-                border-radius: 60px;
+        width: 1000px;
+        height: 650px;
+        overflow-y: scroll;
+        .barra {
+            position: absolute;
+            top: 30px;
+            height:3409px;
+            border: 2px solid white;
+        }
+        .arrow{
+            position: absolute;
+            top: 40px;
+            width: 40px;
+            z-index: 1;
+        }
+        .rotated{
+            rotate: 180deg;
+        }
+        .sort{ 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid white;
+            border-radius: 50px;
+            width: 60px;
+            height: 60px;
+            margin-bottom: 70px;
+            cursor: pointer;
+        }
+        &--item{
+            &__left{
+                border-top: 2px solid white;
+                margin-right: 300px;
+                width: 300px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 20px;
+                gap: 5px;
+                img{
+                    height: 120px;
+                    width: 120px;
+                    border-radius: 60px;
+                }
+            }
+            &__right{
+                border-top: 2px solid white;
+                margin-left: 300px;
+                width: 300px;
+                display: flex;
+                flex-direction: column;
+                padding-top: 20px;
+                gap: 5px;
+                align-items: center;
+                img{
+                    height: 120px;
+                    width: 120px;
+                    border-radius: 60px;
+                }
             }
         }
-        &--right{
-            border-top: 5px solid white;
-            margin-left: 300px;
-            width: 300px;
-            img{
-                height: 120px;
-                width: 120px;
-                border-radius: 60px;
-            }
-        }
     }
+    
     p{
         margin: 0;
         padding: 0;

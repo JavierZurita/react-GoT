@@ -31,17 +31,20 @@ export default function ChronologyPage(){
     return(
         <div className="chronology">
             <Header />
-           {characters && <div onClick={() => {sortByNumber(characters)}} className="sort">{characters[0].age}</div>}
-            <div className="barra" />
-            <img  className={isRotated ? "arrow rotated" : "arrow"} src="/flecha.png" alt="flecha"/>
-            {characters && characters.map((char,index) => 
-                <div className={index%2 === 0 ? "chronology__item--left" : "chronology__item--right"} key={index}>
-                    
-                    <p>{char.name}</p>
-                    <p>{char.age}</p>
-                    <img src={"http://localhost:3000/"+char.image} alt={char.name} />
-                </div>
-            )}
+            <div className="chronology__main">
+                {characters && <div onClick={() => {sortByNumber(characters)}} className="sort">{characters[0].age}</div>}
+                <div className="barra" />
+                <img  className={isRotated ? "arrow rotated" : "arrow"} src="/flecha.png" alt="flecha"/>
+                {characters && characters.map((char,index) => 
+                    <div className={index%2 === 0 ? "chronology__main--item__left" : "chronology__main--item__right"} key={index}>
+                        
+                        <p>{char.name}</p>
+                        <p>{char.age}</p>
+                        <img src={"http://localhost:3000/"+char.image} alt={char.name} />
+                    </div>
+                )}
+            </div>
+           
             <Footer />
         </div>
     )
