@@ -1,5 +1,5 @@
 import './Header.scss'
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { LanguageContext } from "../../shared/context/Language.context";
 
@@ -15,14 +15,14 @@ export default function Header({data}){
             window.location.href = '/house';
         } 
     }
-    const handleInputChange = (event) => {
-        data.setSearchValue(event.target.value);
+    const handleInputChange = (e) => {
+        data.setSearchValue(e.target.value);
     };
     return(
         <header className='header'>
             <div className='header__divVacio'>
                 { (window.location.pathname === "/house" || window.location.pathname === "/character") && <input placeholder={t('search')} onChange={handleInputChange} type="text" />}
-                { (window.location.pathname.startsWith('/character/') || window.location.pathname.startsWith('/house/')) && <div onClick={handleBackClick}>{t('back')}</div>}
+                { (window.location.pathname.startsWith('/character/') || window.location.pathname.startsWith('/house/')) && <div className='volver' onClick={handleBackClick}>{t('back')}</div>}
             </div>
             <div className='header__language'>
                 <Link to="/"><img className='header__language--img' src='/home.svg' alt='home'></img></Link>

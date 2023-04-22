@@ -8,9 +8,9 @@ export default function Footer(){
 
     return (
         <footer className="footer">
-            <Link className="footer__link" to="/character">{t('characters')}</Link>
-            <Link className="footer__link" to="/house">{t('houses')}</Link>
-            <Link className="footer__link" to="/chronology">{t('chronology')}</Link>
+            <Link to="/character" className={window.location.pathname === "/character" ?'footer__link active-link': "footer__link"}>{t('characters')}</Link>
+            <Link to="/house" className={window.location.pathname === "/house" ?'footer__link active-link': "footer__link"}>{t('houses')}</Link>
+            <Link to="/chronology" className={window.location.pathname === "/chronology" ?'footer__link active-link': "footer__link"}>{t('chronology')}</Link>
         </footer>
     )
 }
