@@ -21,8 +21,16 @@ export default function Header({data}){
     return(
         <header className='header'>
             <div className='header__divVacio'>
-                { (window.location.pathname === "/house" || window.location.pathname === "/character") && <input placeholder={t('search')} onChange={handleInputChange} type="text" />}
-                { (window.location.pathname.startsWith('/character/') || window.location.pathname.startsWith('/house/')) && <div className='volver' onClick={handleBackClick}>{t('back')}</div>}
+                { (window.location.pathname === "/house" || window.location.pathname === "/character") && <input className='header__divVacio--input' placeholder={t('search')} onChange={handleInputChange} type="text" style={{
+                    backgroundImage: "url(/lupa.svg)",
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "25px"
+
+                    }} />}
+                { (window.location.pathname.startsWith('/character/') || window.location.pathname.startsWith('/house/')) && <div className='header__divVacio--volver' onClick={handleBackClick}>
+                    <img className='header__divVacio--volver--img' src='/arrow.svg'></img>
+                    <p className='header__divVacio--volver--texto'>{t('back')}</p>
+                </div>}
             </div>
             <div className='header__language'>
                 <Link to="/"><img className='header__language--img' src='/home.svg' alt='home'></img></Link>
