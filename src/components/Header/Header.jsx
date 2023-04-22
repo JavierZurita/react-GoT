@@ -21,7 +21,7 @@ export default function Header({data}){
     return(
         <header className='header'>
             <div className='header__divVacio'>
-                { (window.location.pathname === "/house" || window.location.pathname === "/character") && <input onChange={handleInputChange} type="text"/>}
+                { (window.location.pathname === "/house" || window.location.pathname === "/character") && <input placeholder={t('search')} onChange={handleInputChange} type="text" />}
                 { (window.location.pathname.startsWith('/character/') || window.location.pathname.startsWith('/house/')) && <div onClick={handleBackClick}>{t('back')}</div>}
             </div>
             <div className='header__language'>

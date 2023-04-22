@@ -25,20 +25,6 @@ export default function CharacterPage(){
         })
     },[searchValue])
 
-    // const handleChange = (e) => {
-    //     const charCopy = [];
-    //     let info = [];
-    //     axios.get("http://localhost:3000/characters").then(res => {
-    //         info = res.data;
-    //         for (const char of info) {
-    //             if(char.name.toLowerCase().includes(searchValue.toLowerCase())){
-    //                 charCopy.push(char);
-    //             }
-    //         }
-    //         setCharacters(charCopy);
-    //     })
-    // }
-
     return(
         <div className="charpage">
             <Header data={{searchValue,setSearchValue}}/>
