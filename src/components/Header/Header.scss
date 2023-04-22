@@ -8,6 +8,13 @@
     align-items: center;
     &__divVacio{
 
+        input{
+            color: white;
+            background-color: black;
+            border: 0px;
+            border-bottom: 2px solid white;
+            width: 500px;
+        }
     }
     &__language{
         display: flex;
