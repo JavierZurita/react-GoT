@@ -37,7 +37,7 @@ export default function ChronologyPage(){
                 <img  className={isRotated ? "arrow rotated" : "arrow"} src="/flecha.png" alt="flecha"/>
                 {characters && characters.map((char,index) => 
                     <div className={index%2 === 0 ? "chronology__main--item__left" : "chronology__main--item__right"} key={index}>
-                        
+
                         <p>{char.name}</p>
                         <p>{char.age}</p>
                         <img src={"http://localhost:3000/"+char.image} alt={char.name} />
