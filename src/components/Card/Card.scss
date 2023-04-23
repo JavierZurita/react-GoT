@@ -8,9 +8,12 @@ img{
     display: none;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.333);
+    text-decoration: none;
+    color: white;
 }
 .imagen{
     position: relative;
+
 }
 .imagen:hover .hidden{
         display: block;    
