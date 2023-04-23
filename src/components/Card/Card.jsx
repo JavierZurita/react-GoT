@@ -22,9 +22,6 @@ export default function Card({data, type}){
                     </div>
                 </Link>}
                 
-                {/* <div className="hidden">
-                <p>{data.name}</p>
-                </div> */}
             </div>  
             
         </div>
