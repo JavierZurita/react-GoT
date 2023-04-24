@@ -8,5 +8,7 @@ export const es = {
     houses: "Casas",
     chronology: "Cronologia",
     back: "Volver",
-    search: "Buscar..."
+    search: "Buscar...",
+    gameThrones: "JUEGO DE TRONOS"
+
 }
