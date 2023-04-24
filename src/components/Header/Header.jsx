@@ -28,7 +28,7 @@ export default function Header({data}){
 
                     }} />}
                 { (window.location.pathname.startsWith('/character/') || window.location.pathname.startsWith('/house/')) && <div className='header__divVacio--volver' onClick={handleBackClick}>
-                    <img className='header__divVacio--volver--img' src='/arrow.svg'></img>
+                    <img className='header__divVacio--volver--img' src='/arrow.svg' alt='arrow'></img>
                     <p className='header__divVacio--volver--texto'>{t('back')}</p>
                 </div>}
             </div>

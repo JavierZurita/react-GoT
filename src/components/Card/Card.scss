@@ -13,7 +13,9 @@ img{
 }
 .imagen{
     position: relative;
-
+    img{
+        object-fit: cover;
+    }
 }
 .imagen:hover .hidden{
         display: block;    
